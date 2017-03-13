@@ -29,5 +29,16 @@ for k in range(0, len(sec_eight_addrs_tup)):
     sec_eight_addrs_str.insert(0, ' '.join(sec_eight_addrs_tup.pop()))
 
 
-# TODO: merge strings with property names
+# merge strings with property names
+
+lidf = lihtc.PROJECT
+lidf.name = 'Name'
+sdf = sec_eight.property_name_text
+sdf.name = 'Name'
+
+df2 = pd.concat([lidf, pd.DataFrame(lihtc_addrs_str)], axis=1)
+df3 = pd.concat([sdf, pd.DataFrame(sec_eight_addrs_str)], axis=1)
+
+df = pd.concat([df2,df3])  # this dataframe has the names and addresses
+
 # TODO: code by number of units
